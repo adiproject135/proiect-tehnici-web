@@ -1,0 +1,219 @@
+
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button, input, select {
+    font: inherit;
+}
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 4px;
+}
+::selection {
+    background: var(--green);
+    color: var(--bg);
+}
+img, svg {
+    max-width: 100%;
+}
+h1, h2, h3, p {
+    margin-top: 0;
+}
+h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -.035em;
+    line-height: 1.15;
+}
+code, pre {
+    font-family: var(--font-mono);
+}
+
+.skip-link {
+    position: absolute;
+    top: -5rem;
+    left: 1rem;
+    padding: .75rem 1rem;
+    background: var(--green);
+    color: var(--bg);
+    z-index: 20;
+}
+.skip-link:focus {
+    top: 1rem;
+}
+.muted {
+    color: var(--muted);
+}
+.eyebrow {
+    color: var(--green);
+    font: 500 .72rem var(--font-mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+:root {
+    --bg: #11110f;
+    --surface: #191815;
+    --surface-soft: #151411;
+    --border: #302d27;
+    --text: #eee9df;
+    --muted: #aaa397;
+    --green: #c8a77b;
+    --green-soft: rgba(200,167,123,.10);
+    --amber: #d6b58c;
+    --amber-soft: rgba(214,181,140,.10);
+    --red: #d98278;
+    --red-soft: rgba(217,130,120,.10);
+    --shadow-panel: 0 12px 34px rgba(0,0,0,.12);
+}
+
+.intro-page {
+    background: radial-gradient(ellipse at 50% 42%, #24211c 0%, #11110f 66%);
+}
+.intro-meta, .intro-footer {
+    color: #827a6e;
+    font-family: var(--font-body);
+    letter-spacing: .025em;
+    font-size: .72rem;
+}
+.intro-meta .status-dot {
+    background: #c8a77b;
+    box-shadow: none;
+}
+.intro-center .eyebrow {
+    color: #a89b88;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: .18em;
+}
+.brand-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -.065em;
+}
+.brand-lens {
+    color: #d6b58c;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .3s ease, color .3s ease, filter .3s ease;
+}
+.brand-lens:hover, .brand-lens:focus-visible {
+    color: #f0d4ad;
+    transform: scale(1.07) rotate(-5deg);
+    filter: drop-shadow(0 0 9px rgba(214,181,140,.2));
+}
+.brand-lens:focus-visible {
+    outline: 2px solid #d6b58c;
+    outline-offset: 5px;
+    border-radius: 50%;
+}
+.brand-lens svg {
+    display:block;
+}
+.intro-tagline {
+    color: #b7afa3;
+    letter-spacing: .015em;
+}
+.start-control {
+    color: #c8a77b;
+    margin-top: 2.4rem;
+}
+.start-lens {
+    width: 56px;
+    height: 56px;
+    border-color: #4a4032;
+}
+.start-lens svg {
+    width: 38px;
+    height: 38px;
+}
+.start-label {
+    font-family: var(--font-body);
+    letter-spacing: .08em;
+    color: #aaa397;
+    font-size: .72rem;
+}
+.start-control:hover .start-lens {
+    border-color: #c8a77b;
+    box-shadow: 0 0 22px rgba(200,167,123,.10);
+}
+.start-control:hover .start-label {
+    color: var(--text);
+}
+.intro-footer span:nth-child(2) {
+    color: #a89b88;
+}
+.topbar {
+    background: rgba(17,17,15,.94);
+}
+.wordmark span, .system-status, .status-dot, .prompt {
+    color: #c8a77b;
+}
+.status-dot {
+    background: #c8a77b;
+    box-shadow: none;
+}
+.system-status {
+    font-family: var(--font-body);
+    letter-spacing: .025em;
+}
+.panel {
+    box-shadow: 0 8px 28px rgba(0,0,0,.10);
+}
+.panel-header {
+    background: transparent;
+}
+.panel-title, .case-heading strong {
+    letter-spacing: 0;
+}
+.metric {
+    background: transparent;
+}
+.metric small, .section-divider, .case-heading .case-id, .case-heading small {
+    font-family: var(--font-body);
+    letter-spacing: .04em;
+}
+.metric strong {
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.evidence-card {
+    background: rgba(255,255,255,.012);
+}
+
+.statusbar {
+    background: #0e0e0c;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

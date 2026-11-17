@@ -1,0 +1,312 @@
+
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: .25rem .55rem;
+    color: var(--muted);
+    font: .64rem var(--font-mono);
+    white-space: nowrap;
+}
+.badge-green {
+    color: var(--green);
+    border-color: rgba(85,230,165,.25);
+    background: var(--green-soft);
+}
+.badge-amber {
+    color: var(--amber);
+    border-color: rgba(255,190,105,.25);
+    background: var(--amber-soft);
+}
+.badge-red {
+    color: var(--red);
+    border-color: rgba(255,116,116,.25);
+    background: var(--red-soft);
+}
+
+.terminal {
+    background: #080b0e;
+    border: 1px solid #202a32;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .7rem .9rem;
+    background: #11171d;
+    border-bottom: 1px solid #202a32;
+    color: #91a0ae;
+    font: .68rem var(--font-mono);
+}
+.window-dots {
+    display: flex;
+    gap: 5px;
+}
+.window-dots i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #46515b;
+}
+.terminal-content {
+    padding: 1rem;
+    overflow-x: auto;
+    color: #b7c5d1;
+    font: .73rem/1.85 var(--font-mono);
+}
+.terminal-line {
+    display: block;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.prompt {
+    color: var(--green);
+}
+.output {
+    color: #aab8c5;
+}
+.log-warn {
+    color: var(--amber);
+}
+.log-danger {
+    color: var(--red);
+}
+.log-dim {
+    color: #637180;
+}
+
+.log-table {
+    display: grid;
+    gap: .15rem;
+}
+.log-row {
+    display: grid;
+    grid-template-columns: 112px 62px minmax(0,1fr);
+    gap: .7rem;
+    padding: .5rem .65rem;
+    border-radius: 5px;
+    font: .68rem/1.6 var(--font-mono);
+    color: #9eacb9;
+}
+.log-row:nth-child(even) {
+    background: rgba(255,255,255,.018);
+}
+.log-row .time {
+    color: #657382;
+}
+.log-row .event {
+    color: var(--green);
+}
+.log-row.warning .event {
+    color: var(--amber);
+}
+.log-row.danger .event {
+    color: var(--red);
+}
+
+.evidence-card {
+    padding: .85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-soft);
+}
+.evidence-card + .evidence-card {
+    margin-top: .65rem;
+}
+.evidence-card h3 {
+    margin: .35rem 0;
+    font: 600 .8rem var(--font-display);
+}
+.evidence-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .72rem;
+}
+.evidence-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    font: .62rem var(--font-mono);
+    color: var(--muted);
+}
+
+.callout {
+    border-left: 2px solid var(--amber);
+    padding: .65rem .8rem;
+    background: var(--amber-soft);
+    color: #c8b18e;
+    font-size: .72rem;
+}
+
+.room-dropdown {
+    position: relative;
+    z-index: 80;
+    font-size: .72rem;
+}
+
+.room-dropdown summary {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .68rem .9rem;
+    border: 1px solid #393832;
+    border-radius: 7px;
+    background: #171715;
+    color: #d8d5cb;
+    cursor: pointer;
+    font: 600 .68rem/1 var(--font-mono, monospace);
+    letter-spacing: .12em;
+    list-style: none;
+    transition: border-color .2s, background .2s;
+}
+
+.room-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.room-dropdown summary::after {
+    content: "+";
+    color: #b8a27a;
+    font-size: 1rem;
+}
+
+.room-dropdown[open] summary::after {
+    content: "−";
+}
+
+.room-dropdown summary:hover,
+.room-dropdown[open] summary {
+    border-color: #a68b5e;
+    background: #201e19;
+    color: #e8c98d;
+}
+
+.room-dropdown nav.room-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 100;
+    display: grid;
+    gap: 3px;
+    width: 255px;
+    padding: .65rem;
+    border: 1px solid #393832;
+    border-radius: 10px;
+    background: #141412;
+    box-shadow: 0 20px 55px #0009;
+    animation: menu-in .16s ease-out;
+}
+
+.room-menu .menu-kicker {
+    margin-bottom: .2rem;
+    padding: .45rem .55rem .7rem;
+    border-bottom: 1px solid #2e2d28;
+    color: #8c887d;
+    font: .62rem var(--font-mono, monospace);
+    letter-spacing: .12em;
+}
+
+.room-menu .menu-kicker i {
+    color: #b5a17d;
+    font-style: normal;
+}
+
+.room-menu > a {
+    display: grid;
+    grid-template-columns: 27px 1fr 14px;
+    align-items: center;
+    gap: .65rem;
+    padding: .72rem .6rem;
+    border-radius: 6px;
+    color: #d9d6cc;
+    text-decoration: none;
+    transition: background .15s, color .15s;
+}
+
+.room-menu > a > b {
+    color: #827e73;
+    font: .7rem var(--font-mono, monospace);
+}
+
+.room-menu > a > span {
+    display: grid;
+    gap: .25rem;
+}
+
+.room-menu > a strong {
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.room-menu > a small {
+    color: #858176;
+    font: .58rem var(--font-mono, monospace);
+    letter-spacing: .04em;
+}
+
+.room-menu > a em {
+    color: #716d62;
+    font-style: normal;
+    opacity: 0;
+    transform: translate(-3px, 3px);
+    transition: .15s;
+}
+
+.room-menu > a:hover {
+    background: #26241e;
+    color: #e8c98d;
+}
+
+.room-menu > a:hover > b,
+.room-menu > a:hover small,
+.room-menu > a:hover em {
+    color: #c5a979;
+    opacity: 1;
+    transform: none;
+}
+
+.room-menu .menu-foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .25rem;
+    padding: .65rem .55rem .25rem;
+    border-top: 1px solid #2e2d28;
+    color: #777368;
+    font: .58rem var(--font-mono, monospace);
+    letter-spacing: .1em;
+}
+
+.room-menu .menu-foot span {
+    color: #a9a17d;
+}
+
+@keyframes menu-in {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 520px) {
+    .room-dropdown nav.room-menu {
+        right: -.25rem;
+        width: min(255px, calc(100vw - 2rem));
+    }
+
+    .room-dropdown summary {
+        padding: .6rem .7rem;
+    }
+}
+

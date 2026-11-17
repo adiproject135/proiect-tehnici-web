@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="#11110f" name="theme-color">
+    <title>Case 001 · Host-04 | UNSOLVED</title>
+    <link href="../css/variables.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/layout.css" rel="stylesheet">
+    <link href="../css/components.css" rel="stylesheet">
+    <link href="../css/pages/investigation.css" rel="stylesheet">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to investigation</a>
+    
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="wordmark" href="../index.html">UN <span>S</span> OLVED <span>.</span></a>
+        <div class="case-heading">
+          <div><span class="case-id">CASE 001 / INCIDENT</span> <strong>ACCESS COMPROMISED</strong> <small>CONFIDENTIAL · DIGITAL FORENSICS</small></div>
+        </div>
+        <div class="header-right">
+          <details class="room-dropdown">
+            <summary>ROOMS ▾</summary>
+            <nav class="room-menu">
+              <span class="menu-kicker">CASE 001 <i>/ SELECT LOCATION</i></span>
+              <a href="alex.html"><b>01</b> <span><strong>Alex</strong> <small>GAMER · CACHY OS</small></span> <em>↗</em></a>
+              <a href="maria.html"><b>02</b> <span><strong>Maria</strong> <small>ORGANIZED · LINUX MINT</small></span> <em>↗</em></a>
+              <a href="david.html"><b>03</b> <span><strong>David</strong> <small>SECURITY · KALI LINUX</small></span> <em>↗</em></a>
+              <a href="victor.html"><b>04</b> <span><strong>Victor</strong> <small>ASTRONOMY · FEDORA</small></span> <em>↗</em></a>
+              <div class="menu-foot">4 ENVIRONMENTS <span>●</span></div>
+            </nav>
+          </details>
+          <span class="system-status"><span class="status-dot"></span> SESSION ACTIVE</span>
+        </div>
+      </div>
+    </header>
+    
+    <main class="container" id="main">
+      <div class="case-intro">
+        <div>
+          <span class="eyebrow">INCIDENT RESPONSE / 09 NOV 2026</span>
+          <h1>Trace the access. <br> <span class="muted">Find the weakness.</span></h1>
+          <p>A confidential file was accessed outside normal working hours. Four accounts had access to HOST-04. The login history leaves several questions unanswered.</p>
+        </div>
+        <span class="badge badge-red">● UNRESOLVED</span>
+      </div>
+      
+      <section class="workspace" id="computer">
+        <div class="main-column">
+          
+          <article class="panel">
+            <header class="panel-header">
+              <h2 class="panel-title">HOST-04 — FORENSIC WORKSTATION</h2>
+              <span class="badge badge-green">HOST ONLINE</span>
+            </header>
+            <div class="host-overview">
+              <div class="metric"><small>Hostname</small> <strong>HOST-04</strong></div>
+              <div class="metric"><small>Operating system</small> <strong>Linux / Ubuntu</strong></div>
+              <div class="metric"><small>Incident status</small> <strong class="text-amber">Under review</strong></div>
+            </div>
+            
+            <div class="terminal terminal-block">
+              <div class="terminal-bar"><span class="window-dots"><i></i> <i></i> <i></i></span> <span>root@host-04: /var/log</span> <span>STATIC SESSION</span></div>
+              <div class="terminal-content"><span class="terminal-line"><span class="prompt">root@host-04:~#</span> ls /home</span> <span class="terminal-line output">alex maria david victor</span> <span class="terminal-line"><span class="prompt">root@host-04:~#</span> cat /var/log/auth.log</span> <span class="terminal-line log-dim">[system] Authentication events loaded · 09 NOV</span> <span class="terminal-line">Nov 09 21:04:12 host-04 sshd[1421]: Accepted password for alex</span> <span class="terminal-line">Nov 09 21:15:48 host-04 sshd[1532]: Accepted password for maria</span> <span class="terminal-line log-danger">Nov 09 22:41:03 host-04 sshd[1831]: Failed password for david</span> <span class="terminal-line log-warn">Nov 09 22:42:17 host-04 sshd[1840]: Accepted password for david</span> <span class="terminal-line log-danger">Nov 09 23:01:52 host-04 sudo: victor : COMMAND=/bin/bash</span> <span class="terminal-line"><span class="prompt">root@host-04:~#</span> <span class="log-dim">_</span></span></div>
+            </div>
+            <div class="panel-body">
+              <div class="section-divider">Authentication events / excerpt</div>
+              <div class="log-table">
+                <div class="log-row"><span class="time">21:04:12</span> <span class="event">ACCEPT</span> <span>alex · SSH session opened</span></div>
+                <div class="log-row"><span class="time">21:15:48</span> <span class="event">ACCEPT</span> <span>maria · SSH session opened</span></div>
+                <div class="log-row danger"><span class="time">22:41:03</span> <span class="event">FAILED</span> <span>david · authentication rejected</span></div>
+                <div class="log-row warning"><span class="time">22:42:17</span> <span class="event">ACCEPT</span> <span>david · successful login after failure</span></div>
+                <div class="log-row danger"><span class="time">23:01:52</span> <span class="event">SUDO</span> <span>victor · shell elevated to root</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="panel">
+            <header class="panel-header">
+              <h2 class="panel-title">USER ENVIRONMENTS</h2>
+              <span class="badge">4 LOCATIONS</span>
+            </header>
+            <div class="panel-body user-cards">
+              <a class="user-card alex-card" href="alex.html">
+                <span class="user-card-number">01 / ROOM</span>
+                <span class="user-card-name">Alex</span>
+                <span class="user-card-description">A gaming setup with login details left in view.</span>
+                <span class="user-card-arrow">Explore room ↗</span>
+              </a>
+              <a class="user-card maria-card" href="maria.html">
+                <span class="user-card-number">02 / ROOM</span>
+                <span class="user-card-name">Maria</span>
+                <span class="user-card-description">A tidy desk with a password hidden under the keyboard.</span>
+                <span class="user-card-arrow">Explore room ↗</span>
+              </a>
+              <a class="user-card david-card" href="david.html">
+                <span class="user-card-number">03 / ROOM</span>
+                <span class="user-card-name">David</span>
+                <span class="user-card-description">Security tools, and a password left on the board.</span>
+                <span class="user-card-arrow">Explore room ↗</span>
+              </a>
+              <a class="user-card victor-card" href="victor.html">
+                <span class="user-card-number">04 / ROOM</span>
+                <span class="user-card-name">Victor</span>
+                <span class="user-card-description">Personal interests that reveal more than he intends.</span>
+                <span class="user-card-arrow">Explore room ↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+        <aside class="side-column">
+          <section class="panel">
+            <header class="panel-header">
+              <h2 class="panel-title">INVESTIGATION NOTES</h2>
+              <span class="badge badge-amber">0 / 12</span>
+            </header>
+            <div class="panel-body">
+              <div class="callout">Phase 1: clues are visible. Evidence collection comes later.</div>
+              <div class="evidence-card evidence-card-spaced">
+                <div class="evidence-meta"><span>CLUE 001</span> <span class="badge badge-amber">OBSERVED</span></div>
+                <h3>Unusual login sequence</h3>
+                <p>David's failed attempt is followed by a successful session in 74 seconds.</p>
+              </div>
+              <div class="evidence-card">
+                <div class="evidence-meta"><span>CLUE 002</span> <span class="badge">LOCKED</span></div>
+                <h3>Elevated shell</h3>
+                <p>Victor invoked a root shell shortly before the incident window.</p>
+              </div>
+              <div class="evidence-card">
+                <div class="evidence-meta"><span>CLUE 003</span> <span class="badge">UNDISCOVERED</span></div>
+                <h3>Credential exposure</h3>
+                <p>Check the four rooms for exposed credentials and personal details.</p>
+              </div>
+            </div>
+          </section>
+          <section class="panel">
+            <header class="panel-header">
+              <h2 class="panel-title">CASE PARAMETERS</h2>
+            </header>
+            <div class="panel-body">
+              <div class="evidence-meta"><span>INCIDENT DATE</span> <strong>09 NOV 2026</strong></div>
+              <hr>
+              <div class="evidence-meta"><span>HOST</span> <strong>HOST-04</strong></div>
+              <hr>
+              <div class="evidence-meta"><span>ACCOUNTS</span> <strong>04</strong></div>
+              <hr>
+              <div class="evidence-meta"><span>ACCESS LEVEL</span> <strong class="text-amber">LIMITED</strong></div>
+            </div>
+          </section>
+        </aside>
+      </section>
+    </main>
+    
+    <footer class="statusbar">
+      <div class="container statusbar-inner"><span><strong>HOST-04</strong> / FORENSIC SESSION</span> <span>ACCESS: <strong class="text-amber">LIMITED</strong></span> <span>CASE STATUS: <strong>OPEN</strong></span> <span>PHASE 01 / STATIC BUILD</span></div>
+    </footer>
+  </body>
+</html>
